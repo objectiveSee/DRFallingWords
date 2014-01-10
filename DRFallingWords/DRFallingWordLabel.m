@@ -26,7 +26,7 @@ const NSTimeInterval kDRDelayPerSpace = kDRWordDelayPerCharacter * 3;
         self.backgroundColor = [UIColor whiteColor];
 
         self.maskView = [[UIView alloc] initWithFrame:CGRectZero];
-        self.maskView.backgroundColor = self.backgroundColor;   // doesn't work if background alpha is not zero
+        self.maskView.backgroundColor = self.backgroundColor;   // doesn't work if background alpha is not 100%
         [self addSubview:self.maskView];
         [self setMasked:NO animated:NO];
         
