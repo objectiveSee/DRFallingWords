@@ -59,6 +59,9 @@
 {
     NSCAssert([NSThread isMainThread], @"Require main thread");
     
+    // cancel animate in timers
+    [self _invalidateTimers];
+    
     // finish immediatly if there is nothing to clear
     if ( !self.wordLabels ) {
         if ( completion ) {
@@ -66,10 +69,6 @@
             return;
         }
     }
-
-    // cancel animate in timers
-    [self _invalidateTimers];
-    
     
     // otherwise, animate it all out nicely.
     NSArray *labelsArray = self.wordLabels;
